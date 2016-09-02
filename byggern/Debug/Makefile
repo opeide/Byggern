@@ -39,6 +39,7 @@ SUBDIRS :=
 C_SRCS +=  \
 ../StatusLed.c \
 ../main.c \
+../timer0.c \
 ../Uart.c
 
 
@@ -51,21 +52,25 @@ ASM_SRCS +=
 OBJS +=  \
 StatusLed.o \
 main.o \
+timer0.o \
 Uart.o
 
 OBJS_AS_ARGS +=  \
 StatusLed.o \
 main.o \
+timer0.o \
 Uart.o
 
 C_DEPS +=  \
 StatusLed.d \
 main.d \
+timer0.d \
 Uart.d
 
 C_DEPS_AS_ARGS +=  \
 StatusLed.d \
 main.d \
+timer0.d \
 Uart.d
 
 OUTPUT_FILE_PATH +=byggern.elf
@@ -82,6 +87,8 @@ LINKER_SCRIPT_DEP+=
 
 
 # AVR32/GNU C Compiler
+
+
 
 
 
