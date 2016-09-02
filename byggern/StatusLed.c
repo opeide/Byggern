@@ -9,7 +9,6 @@
 #include <avr/interrupt.h>
 
 static int status = 0;
-//static int blink_activated = 0;
 
 void status_led_init(){
 	DDRA |= (1<<DDA0);		//defines port A pin 0 as output 
@@ -30,11 +29,8 @@ int status_led_get_status(){
 }
 
 /*
-int status_led_get_blink_activated(){
-	return blink_activated;
-}
 
 void status_led_blink_once(int millis){
-	blink_activated = 1;
+	//use timer to delay status_led_off by millis
 }
 */
