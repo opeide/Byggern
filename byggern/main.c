@@ -6,24 +6,27 @@
  */ 
 #define F_CPU 4915200
 
-#include "Uart.h"
+#include <avr/io.h>
 #include <util/delay.h>
+#include "Uart.h"
+#include "StatusLed.h"
+
+
+
 
 int main(void)
 {
-	DDRA = 0x1;
+	status_led_init();
+	USART_Init(BAUD, F_CPU);
 	
-	PORTA |= (1 << PA0);
-	_delay_ms(1000);
-	PORTA &= ~(1 << PA0);
-	USART_Init(BAUD,F_CPU);
-	//unsigned char inn = USART_Receive(NULL);
-	int b=10;
-    while(1)
+	while(1)
     {
-		
-		printf("160 %d. ", b);
+		status_led_on();
+		printf("LED status: %d\n", status_led_get_status());
 		_delay_ms(1000);
-        //TODO:: Please write your application code 
+		status_led_off();
+		printf("LED status: %d\n", status_led_get_status());
+		_delay_ms(1000);
     }
+	return 0;
 }
