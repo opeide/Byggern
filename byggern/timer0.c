@@ -21,7 +21,7 @@ void timer0_init(){
 //TODO: calculate counter limit based on millis, prescaling and clock frequency
 void timer0_execute_function_in_millis(t_func func, int millis){
 	printf("Starting timer\n");
-	TIMSK |= (1<<TOIE0);	//enables timer overflow interrupt
+	TIMSK |= (1<<TOIE0);	//enable timer overflow interrupt
 	function = func;
 }
 
