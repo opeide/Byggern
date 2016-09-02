@@ -19,8 +19,8 @@ void timer0_init(){
 }
 
 //TODO: calculate counter limit based on millis, prescaling and clock frequency
-void timer0_execute_function_in_millis(t_func func, int millis){
-	printf("Starting timer\n");
+void timer0_execute_function_in_millis(t_func func, int millis){	//delays function without halting
+	//printf("Starting timer\n");
 	TIMSK |= (1<<TOIE0);	//enable timer overflow interrupt
 	function = func;
 }
@@ -29,8 +29,8 @@ void timer0_execute_function_in_millis(t_func func, int millis){
 
 ISR(TIMER0_OVF_vect){
 	counter += 1;
-	if (counter % 100 == 0){
-		printf("Overflow triggered: %d\n", counter);
+	if (counter % 10 == 0){
+		//printf("Overflow triggered: %d\n", counter);
 		TIMSK &= ~(1<<TOIE0);	//disable overflow timer
 		function();
 	}

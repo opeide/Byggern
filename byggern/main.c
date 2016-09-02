@@ -24,23 +24,18 @@ int main(void)
 	printf("*****STARTING PROGRAM*****\n");
 	sei();
 	
-	status_led_on();
-	printf("LED status: %d\n", status_led_get_status());
-	_delay_ms(1000);
-	
-	timer0_execute_function_in_millis(status_led_off, 1000);
+
 	
 	while(1)
     {
+				
+		timer0_execute_function_in_millis(status_led_on, 100);
 		_delay_ms(1000);
 		printf("LED status: %d\n", status_led_get_status());
-			
-		/*
-		timer0_execute_function_in_millis(status_led_on, 1000);
+		timer0_execute_function_in_millis(status_led_off, 100);
+		_delay_ms(1000);
 		printf("LED status: %d\n", status_led_get_status());
-		timer0_execute_function_in_millis(status_led_off, 1000);
-		printf("LED status: %d\n", status_led_get_status());
-		*/
+		
     }
 	return 0;
 }
