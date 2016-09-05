@@ -21,20 +21,20 @@ int main(void)
 	USART_Init(BAUD, F_CPU);
 	timer0_init();
 	
-	printf("*****STARTING PROGRAM OWOWOWKWOWOWOWO*****\n");
+	printf("*****STARTING PROGRAM*****\n");
+	
+	//Enable global interrupts
 	sei();
-	
 
-	
 	while(1)
-    {
-				
-		timer0_execute_function_in_millis(status_led_on, 100);
-		_delay_ms(1000);
+    {		
+		printf("LED status: %d\n", status_led_get_status());		
+		timer0_execute_function_in_millis(status_led_on, 5000);
+		_delay_ms(5000);
+		printf("5 seconds passed\n");
 		printf("LED status: %d\n", status_led_get_status());
-		timer0_execute_function_in_millis(status_led_off, 100);
 		_delay_ms(1000);
-		printf("LED status: %d\n", status_led_get_status());
+		status_led_off();
 		
     }
 	return 0;
