@@ -1,5 +1,7 @@
+# Associated with atmel studio
 Debug/
-
+*.atsln
+*.atsuo
 
 # Object files
 *.o
