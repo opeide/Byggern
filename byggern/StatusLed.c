@@ -5,8 +5,7 @@
  *  Author: fredrop
  */ 
 #include "StatusLed.h"
-#include <avr/io.h>
-#include <avr/interrupt.h>
+
 
 static int status = 0;
 

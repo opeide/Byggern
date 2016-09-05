@@ -9,6 +9,10 @@
 #ifndef StatusLed_H_
 #define StatusLed_H_
 
+#include <avr/io.h>
+#include <avr/interrupt.h>
+
+
 void status_led_init();
 void status_led_on();
 void status_led_off();
