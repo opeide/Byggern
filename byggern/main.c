@@ -21,7 +21,7 @@ int main(void)
 	USART_Init(BAUD, F_CPU);
 	timer0_init();
 	
-	printf("*****STARTING PROGRAM*****\n");
+	printf("*****STARTING PROGRAM OWOWOWKWOWOWOWO*****\n");
 	sei();
 	
 
