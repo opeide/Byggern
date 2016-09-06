@@ -20,6 +20,9 @@ int main(void)
 	status_led_init();
 	USART_Init(BAUD, F_CPU);
 	timer0_init();
+	/*External Memory Init*/
+	MCUCR |= (1<<SRE);		//Enable external memory interface 
+	SFIOR |= (1<<XMM2);		//Masks pins used by JTAG
 	
 	printf("*****STARTING PROGRAM*****\n");
 	
